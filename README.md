@@ -24,25 +24,25 @@ Both has a common secret key which they can use for securing their conversations
 But there's a big flaw, when they exchange 28 and 35 the eaves droppers can guess their secret numbers since base number was already public.  
 
 ## Diffie Hellman
-Who said we have to use addition? 
-Instead of doing base + secretA + secret B = final shared secret key.
-They agree mutually on a base b and modulus value m. (these are public)
-Let secret number of A and B be x and y
-Then they do this >> (b^x)%m and (b^y)%m
-Now they share this. The eaves droppers cannot find the value of x and y , this is not straightforward like our addition.
-When m is large and some other criterions are set on a,b,m,x and y, finding x and y in this process will be nearly impossible.
+Who said we have to use addition?   
+Instead of doing base + secretA + secret B = final shared secret key.  
+They agree mutually on a base b and modulus value m. (these are public)  
+Let secret number of A and B be x and y  
+Then they do this >> (b^x)%m and (b^y)%m  
+Now they share this. The eaves droppers cannot find the value of x and y , this is not straightforward like our addition.  
+When m is large and some other criterions are set on a,b,m,x and y, finding x and y in this process will be nearly impossible.  
 
-To finish it off , A will use the now received value (b^y)%m = say X
-now A will perform (X^a)%m=SA.
-B will perform (Y^b)%m = SB.
+To finish it off , A will use the now received value (b^y)%m = say X  
+now A will perform (X^a)%m=SA.  
+B will perform (Y^b)%m = SB.  
 
-Mathematically one can show that SA = SB.
-Hence they both have a common secret key without ever revealing it to the public.
-That is Diffie Hellman
+Mathematically one can show that SA = SB.  
+Hence they both have a common secret key without ever revealing it to the public.  
+That is Diffie Hellman  
 
-You may see this with an animation in this video here https://youtu.be/85oMrKd8afY?t=110
+You may see this with an animation in this video here https://youtu.be/85oMrKd8afY?t=110  
 
-## A bit about the Diffie–Hellman key exchange protocol (From the forked repo, not my explanation)
+## A bit about the Diffie–Hellman key exchange protocol (From the forked repo, not my explanation)  
 Suppose you're a person that wants to send a message to your friend, or a secure bank server that wants to send a message to your client. However, you're stuck with a government monitored, unsecure internet connection. How would you make sure that your message goes across without the Rothschild family reading your bank statement? Well, the answer is pretty easy: encryption. So suppose we use the standard AES, Rijndael cipher,  this is all good and all, but since this is symmetric encryption you and your partner need to share a common key. Well, that poses another problem, how do you get a key across to your friend without being sniffed? You could use RSA, but no one wants to waste their time with RSA libraries, extra prime number generation, and blah blah blah. Instead we use the Diffie–Hellman key exchange protocol.  
 <br>
 Now Diffie–Hellman is not a protocol that enables you to transfer a key across securely, rather, it allows you and the person you're trying to communicate with to generate a unique key that only you and they will know. This is as good if not better, than generating a key and transferring it via asymmetric encryption.  
