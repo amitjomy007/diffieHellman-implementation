@@ -3,18 +3,18 @@
 # diffiejs
 Diffie Hellman implementation in JavaScript
 
-#My Explanation
-##Pre-Story
-Imagine two people are in a public place and they want to talk. But if they talk other people will eavesdrop.
-So they decide to write it down and share.
-But let's assume they are far apart so they have to pass the paper between a person in between. (That is our server)
-So during the passing process, he can easily read it. 
+# My Explanation
+## Pre-Story
+Imagine two people are in a public place and they want to talk. But if they talk other people will eavesdrop.  
+So they decide to write it down and share.  
+But let's assume they are far apart so they have to pass the paper between a person in between. (That is our server)  
+So during the passing process, he can easily read it.   
 
-##The method - but using addition.
-So they mutually agree on a base number. During the agreeing process, they had to pass to the intermediate person so it's public
-Let's say it is 20.
-Now first person creates his own secret number and so does second person, (they wont share this)
-Let secrete number of person A be 8 and that of B be 15 
+## The method - but using addition.  
+So they mutually agree on a base number. During the agreeing process, they had to pass to the intermediate person so it's public  
+Let's say it is 20.  
+Now first person creates his own secret number and so does second person, (they wont share this)  
+Let secrete number of person A be 8 and that of B be 15   
 Now first person will add his secret number to base nubmer so he get sA = 28 (sum of A) and so does second person so he gets sB = 35
 Now they share it, so 28 and 35 are public. (I know there is a major flaw here, but stick along)
 Now person A has 35 and person B has 28. Now they add their corresponding secret nubmers to this.
@@ -23,7 +23,7 @@ Both has a common secret key which they can use for securing their conversations
 
 But there's a big flaw, when they exchange 28 and 35 the eaves droppers can guess their secret numbers since base number was already public.
 
-##Diffie Hellman
+## Diffie Hellman
 Who said we have to use addition? 
 Instead of doing base + secretA + secret B = final shared secret key.
 They agree mutually on a base b and modulus value m. (these are public)
